@@ -1,0 +1,30 @@
+{
+  "store_url": "https://classylivingco.com",
+  "business_email": "classylivingco88@gmail.com",
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 587,
+  "email_app_password": "YOUR_APP_PASSWORD_HERE",
+  "daily_batch_size": 25,
+  "max_feed_age_hours": 48,
+  "preserve_existing_retail_price": true,
+  "promo_discount_buffer_percent": 0.1,
+  "payment_fee_percent": 0.029,
+  "payment_fee_fixed": 0.3,
+  "default_freight_buffer_usd": 15.0,
+  "minimum_net_profit_usd": 10.0,
+  "default_supplier_rules": {
+    "enforce_map": true,
+    "portal_url": "Check Bookmarks"
+  },
+  "dropbox_image_sync_folder": "Desktop/Anderson_Teak_Images",
+  "supplier_overrides": {
+    "CJ Dropshipping": {
+      "enforce_map": false,
+      "portal_url": "https://app.cjdropshipping.com"
+    },
+    "Anderson Teak": {
+      "enforce_map": true,
+      "portal_url": "https://member.andersonteak.com"
+    }
+  }
+}
