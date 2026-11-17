@@ -1,0 +1,26 @@
+name: Classy Living Daily Automation
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Classy Living Engine
+        env:
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+        run: python classy_living_engine.py
+      - name: Save Updated State & Patch
+        run: |
+          git config user.name "Classy Living Bot"
+          git config user.email "bot@classylivingco.com"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "Daily automated SEO & state update"
+          git push
